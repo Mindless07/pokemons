@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Loading from "../utils/loading";
 import Pokemon from './pokemon'
 
 function Pokemons () {
@@ -36,7 +37,7 @@ function Pokemons () {
   return (
     <div className="flex justify-center">
       { loading ? 
-        <div> loading </div>
+        <Loading/>
         :
         <div className="w-4/5">
           <ul>
