@@ -10,7 +10,7 @@ function Header() {
         <HeaderItem Title='HOME' Icon={HomeIcon} goto="/" /> 
       </div>
       <div className='items-center w-20 sm:w-10'>
-        <Image layout="intrinsic" src={PokeBall} />
+        <Image alt="header-logo" layout="intrinsic" src={PokeBall} />
       </div>
     </div>
   )

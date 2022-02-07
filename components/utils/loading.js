@@ -5,7 +5,7 @@ function Loading() {
 
   return (
     <div className='animate-spin w-80 sm:w-40'>
-      <Image src={PokeBall}/>
+      <Image alt="loading-logo" src={PokeBall}/>
     </div>
   )
 }
