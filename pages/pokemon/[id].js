@@ -22,7 +22,7 @@ function PokemonDetails () {
       .catch(() => {
         setError(true) 
       })
-  }, [])
+  }, [router])
 
 	return (
 		<div className="flex flex-col items-center justify-center">
@@ -38,7 +38,7 @@ function PokemonDetails () {
         <div>
           Type: type
         </div>
-        <Evolutions pokemon={pokemon.id} />
+        <Evolutions pokemonId={pokemon.id} />
       </div>
       }
 		</div>
