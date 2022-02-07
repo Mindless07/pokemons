@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Loading from "../utils/loading";
+import Pagination from "../utils/pagination";
 import Pokemon from './pokemon'
 
 function Pokemons () {
@@ -13,12 +14,6 @@ function Pokemons () {
       setPage(pageIndex)
     }
   } 
-
-  function range(start, end) {
-    let result = Array(end - start + 1).fill().map((_, idx) => start + idx)
-    console.log(result)
-    return result
-  }
 
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${page*20}`)
@@ -43,22 +38,11 @@ function Pokemons () {
           <ul>
             { pokemons.results.map(pokemon => {
               return (
-                <Pokemon pokemon={pokemon} />
+                <Pokemon key={pokemon.name} pokemon={pokemon} />
               );
             })}
           </ul>
-          {
-            [...range(page, page + 3)].map(pageIndex => {
-              return (
-                <span 
-                  onClick={handlePaginationClick(pageIndex)} 
-                  key={pageIndex} 
-                  className="m-2">
-                    { pageIndex }
-                </span>
-              ) 
-            })
-          }
+          <Pagination pageIndex={page} handlePaginationClick={handlePaginationClick} />
         </div>
       }
     </div>
