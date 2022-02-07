@@ -9,7 +9,6 @@ export default function Home() {
         <title>My Pokemons</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
-      <Header/>
       <Pokemons/>
     </div>
   )
