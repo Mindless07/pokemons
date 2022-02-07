@@ -16,10 +16,15 @@ function Pagination({ pageIndex, handlePaginationClick }) {
 
   return (
     <div className="mb-3 flex justify-center items-center">
-      <ChevronLeftIcon 
-        onClick={handlePaginationClick(pageIndex -1)} 
-        className='h-8 cursor-pointer'
-      />
+      { 
+        pageIndex !== 0 ?
+          <ChevronLeftIcon 
+            onClick={handlePaginationClick(pageIndex - 1)} 
+            className='h-8 cursor-pointer'
+          />
+          :
+          null
+      }
       { [...paginationRange(pageIndex , pageIndex + 4)].map(rangeIndex => {
           return (
             <span 
