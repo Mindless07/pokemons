@@ -3,7 +3,7 @@ import Link from 'next/link'
 function Pokemon({ pokemon }) {
 
   return (
-    <Link href={`/pokemon/${pokemon.url.slice(-2)}`} >
+    <Link href={`/pokemon/${pokemon.name}`} >
       <div 
         className="flex justify-between border-solid rounded border-2 border-white-500 hover:border-green-700
         m-2 p-2 group"
